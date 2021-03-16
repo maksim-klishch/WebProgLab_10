@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L10</title>
+
+        <meta charset="utf8">
+
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <input type="button" class="run"> <br/>
+        <div id="control_container">
+            <img id="logo" src="html5_logo.png">
+        </div>
+        
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+
+        <script>
+            $(".run").click(function(){
+                var obj = $("#logo");
+                obj.animate({top : "+=40", left: (($(document).width() - obj.width())/2).toString()}, "slow")
+                .animate({width: (obj.width() * 2).toString(), height: (obj.height() * 2).toString()}, "slow")
+                .animate({left: ($(document).width() - obj.width()).toString(), top: ($(document).height() - obj.height()).toString()}, "slow")
+                .animate({opacity: "0"}, "slow")
+                .animate({left: "0", top: "0", opacity: "1"}, "slow")
+                .animate({opacity: "0"}, "slow");
+                return false;
+            });
+        </script>
+    </body>
+</html>
